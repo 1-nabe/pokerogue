@@ -27,7 +27,7 @@ import { modifierTypes } from "./modifier/modifier-type";
 
 // a specific seed (default: a random string of 24 characters)
 export const SEED_OVERRIDE: string = "";
-export const WEATHER_OVERRIDE: WeatherType = WeatherType.NONE;
+export const WEATHER_OVERRIDE: WeatherType = 0;
 export const DOUBLE_BATTLE_OVERRIDE: boolean = false;
 export const STARTING_WAVE_OVERRIDE: integer = 0;
 export const STARTING_BIOME_OVERRIDE: Biome = Biome.TOWN;
@@ -101,8 +101,8 @@ export const OPP_VARIANT_OVERRIDE: Variant = 0;
  * - BerryType is for BERRY
  */
 interface ModifierOverride {
-    name: keyof typeof modifierTypes & string,
-    count?: integer
+  name: keyof typeof modifierTypes & string,
+  count?: integer
     type?: TempBattleStat|Stat|Nature|Type|BerryType
 }
 export const STARTING_MODIFIER_OVERRIDE: Array<ModifierOverride> = [];
